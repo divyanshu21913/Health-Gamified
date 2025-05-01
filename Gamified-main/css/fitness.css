@@ -1,0 +1,229 @@
+/* Fitness Tracker Styles */
+.fitness-input-section {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .fitness-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .fitness-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .fitness-form label {
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .fitness-form input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+  
+  .fitness-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 1.5rem;
+  }
+  
+  .fitness-form button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  
+  
+  .fitness-averages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .average-card {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .average-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .average-card .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .suggestions-section {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .suggestions-section h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--text-color);
+  }
+  
+  .suggestions-section ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+  
+  .suggestions-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  /* Notification styles */
+  .notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background: rgba(0, 0, 0, 0.85);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .notification::before {
+    content: '🎉';
+    font-size: 16px;
+  }
+  
+  .notification.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  
+  .notification.success {
+    background: linear-gradient(to right, rgba(76, 175, 80, 0.95), rgba(56, 142, 60, 0.95));
+  }
+  
+  .notification.error {
+    background: linear-gradient(to right, rgba(244, 67, 54, 0.95), rgba(198, 40, 40, 0.95));
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .fitness-form {
+      grid-template-columns: 1fr;
+    }
+  
+  
+    .fitness-averages {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Fitness History Table */
+  .fitness-history-section {
+    margin-top: 2rem;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    margin-top: 1rem;
+  }
+
+  .fitness-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .fitness-table th {
+    background-color: var(--background-color);
+    padding: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .fitness-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+  }
+
+  .fitness-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .fitness-table .error-message {
+    text-align: center;
+    color: var(--error-color, #f44336);
+    padding: 2rem;
+    font-weight: 500;
+  }
+
+  /* Hover effect for table rows */
+  .fitness-table tbody tr:hover {
+    background-color: var(--background-color);
+  }
+
+  /* Responsive table */
+  @media (max-width: 768px) {
+    .fitness-table {
+      font-size: 0.9rem;
+    }
+
+    .fitness-table th,
+    .fitness-table td {
+      padding: 0.75rem;
+    }
+  }
+
+  /* Super narrow screens */
+  @media (max-width: 480px) {
+    .fitness-table {
+      font-size: 0.8rem;
+    }
+
+    .fitness-table th,
+    .fitness-table td {
+      padding: 0.5rem;
+    }
+  }

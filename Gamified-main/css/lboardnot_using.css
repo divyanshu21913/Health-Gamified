@@ -1,0 +1,245 @@
+General Styles
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav.desktop-nav ul li {
+    display: inline;
+}
+
+nav.desktop-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+nav.desktop-nav ul li.active a {
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.points-display {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.user-avatar {
+    cursor: pointer;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.user-dropdown.active {
+    display: block;
+}
+
+.user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-dropdown ul li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #444;
+}
+
+.user-dropdown ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Leaderboard Section */
+.leaderboard-full {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Top Performers */
+.top-performers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.performer {
+    text-align: center;
+}
+
+.performer img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+    width: 100%;
+}
+
+.leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.leaderboard-body {
+    margin-top: 10px;
+}
+
+.leaderboard-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.leaderboard-row.current-user {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: var(--primary-color);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 10px 0;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    flex: 1;
+}
+
+.mobile-nav a.active {
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+.performer .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Assign images to top 3 performers */
+.performer:nth-child(1) .avatar {
+    background-image: url('images/first.png'); /* First place */
+}
+
+.performer:nth-child(2) .avatar {
+    background-image: url('images/second.png'); /* Second place */
+}
+
+.performer:nth-child(3) .avatar {
+    background-image: url('images/third.png'); /* Third place */
+}
+
+/* Avatar for leaderboard users */
+.leaderboard-row .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Assign images to leaderboard ranks */
+.leaderboard-row:nth-child(1) .avatar {
+    background-image: url('/img/bg.jpg'); /* First place */
+}
+
+.leaderboard-row:nth-child(2) .avatar {
+    background-image: url('images/second.png'); /* Second place */
+}
+
+.leaderboard-row:nth-child(3) .avatar {
+    background-image: url('images/third.png'); /* Third place */
+}
+
+/* Default avatar for other users */
+.leaderboard-row .avatar:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+    background-image: url('images/default-avatar.png'); /* Default image */
+}

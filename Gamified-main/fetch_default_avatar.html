@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch Default Avatar</title>
+</head>
+<body>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <img id="avatar" src="https://ui-avatars.com/api/?name=User&background=random&size=200" crossorigin="anonymous" onload="saveImage()">
+    <script>
+        function saveImage() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = document.getElementById('avatar');
+            
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+            
+            const link = document.createElement('a');
+            link.download = 'default.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
